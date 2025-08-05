@@ -30,17 +30,9 @@ const HeroCarousel = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
             Nova Comunicação
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90 animate-fade-in-up animate-delay-100">
+          <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90 animate-fade-in-up animate-delay-100">
             Sua parceira em comunicação visual. Criamos soluções gráficas que transformam ideias em realidade.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animate-delay-200">
-            <button className="btn-hero text-lg px-10 py-4">
-              Conhecer Produtos
-            </button>
-            <button className="glass text-white px-10 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300">
-              Falar Conosco
-            </button>
-          </div>
         </div>
       </div>
 

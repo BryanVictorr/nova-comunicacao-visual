@@ -89,11 +89,11 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, index) => (
-              <Card key={index} className="card-catalog group animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+              <Card key={index} className="card-catalog group animate-fade-in-up cursor-pointer" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardContent className="p-6">
                   <div className="flex justify-between items-center">
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{product.name}</h3>
                       <p className="text-primary font-medium">{product.price}</p>
                     </div>
                     <ArrowRight className="w-6 h-6 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />

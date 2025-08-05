@@ -14,6 +14,12 @@ import {
   Star,
   CheckCircle 
 } from 'lucide-react';
+import serviceCartoes from '@/assets/service-cartoes.jpg';
+import serviceBanners from '@/assets/service-banners.jpg';
+import serviceCamisetas from '@/assets/service-camisetas.jpg';
+import serviceBrindes from '@/assets/service-brindes.jpg';
+import serviceAdesivos from '@/assets/service-adesivos.jpg';
+import serviceFolders from '@/assets/service-folders.jpg';
 
 const ProdutosServicos = () => {
   const [activeCategory, setActiveCategory] = useState('impressao');
@@ -34,13 +40,15 @@ const ProdutosServicos = () => {
         description: "Cartões personalizados com acabamentos especiais",
         price: "A partir de R$ 50",
         features: ["Papel especial", "Verniz UV", "Relevo seco", "Corte especial"],
-        popular: true
+        popular: true,
+        image: serviceCartoes
       },
       {
         title: "Folders e Panfletos",
         description: "Material promocional de alta qualidade",
         price: "A partir de R$ 80",
-        features: ["Papel couché", "Dobras especiais", "Acabamento UV", "Formatos variados"]
+        features: ["Papel couché", "Dobras especiais", "Acabamento UV", "Formatos variados"],
+        image: serviceFolders
       },
       {
         title: "Catálogos e Revistas",
@@ -52,7 +60,8 @@ const ProdutosServicos = () => {
         title: "Banners e Faixas",
         description: "Impressão em lona para eventos e promoções",
         price: "A partir de R$ 120",
-        features: ["Lona resistente", "Cores duradouras", "Ilhoses", "Tamanhos personalizados"]
+        features: ["Lona resistente", "Cores duradouras", "Ilhoses", "Tamanhos personalizados"],
+        image: serviceBanners
       }
     ],
     design: [
@@ -88,7 +97,8 @@ const ProdutosServicos = () => {
         description: "Estampas em silk, transfer e bordado",
         price: "A partir de R$ 25",
         features: ["Silk screen", "Transfer", "Bordado", "Tecidos variados"],
-        popular: true
+        popular: true,
+        image: serviceCamisetas
       },
       {
         title: "Uniformes Profissionais",
@@ -121,7 +131,8 @@ const ProdutosServicos = () => {
         description: "Utensílios personalizados para eventos",
         price: "A partir de R$ 20",
         features: ["Material atóxico", "Impressão UV", "Cores variadas", "Tampa com bico"],
-        popular: true
+        popular: true,
+        image: serviceBrindes
       },
       {
         title: "Pen Drives",
@@ -169,7 +180,8 @@ const ProdutosServicos = () => {
         description: "Envelopamento total ou parcial",
         price: "A partir de R$ 800",
         features: ["Vinil premium", "Impressão HD", "Aplicação profissional", "Garantia"],
-        popular: true
+        popular: true,
+        image: serviceAdesivos
       },
       {
         title: "Adesivos para Frota",
@@ -233,12 +245,24 @@ const ProdutosServicos = () => {
               <TabsContent key={category.id} value={category.id}>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                   {products[category.id as keyof typeof products]?.map((product, index) => (
-                    <Card key={index} className="card-catalog group relative animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                    <Card key={index} className="card-catalog group relative overflow-hidden animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
                       {product.popular && (
-                        <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-primary to-secondary text-white">
+                        <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-primary to-secondary text-white">
                           <Star className="w-3 h-3 mr-1" />
                           Popular
                         </Badge>
+                      )}
+                      
+                      {/* Image Section */}
+                      {(product as any).image && (
+                        <div className="aspect-[4/3] bg-muted relative overflow-hidden">
+                          <img 
+                            src={(product as any).image} 
+                            alt={product.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
                       )}
                       
                       <CardHeader>
