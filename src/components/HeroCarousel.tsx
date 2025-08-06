@@ -26,7 +26,7 @@ const HeroCarousel = () => {
   ];
 
   const plugin = useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: false })
   );
 
   // 2. Criar um estado para guardar a API do carrossel e o índice ativo
