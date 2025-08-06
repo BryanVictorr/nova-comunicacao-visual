@@ -23,7 +23,7 @@ const Footer = () => {
     {
       icon: <MapPin className="w-4 h-4" />,
       text: "Av. Deputado Raimundo de Sá Urtiga, Bomba, Picos-PI",
-      href: "https://www.google.com/maps/search/?api=1&query=Av.+Deputado+Raimundo+de+Sá+Urtiga,+Bomba,+Picos-PI"
+      href: "https://maps.app.goo.gl/XzM8tzEid8q8xfkg9"
     },
     {
       icon: <Phone className="w-4 h-4" />,

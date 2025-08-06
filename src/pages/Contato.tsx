@@ -31,7 +31,7 @@ const Contato = () => {
       title: "Endereço",
       info: "Av. Dep. Raimundo de Sá Urtiga",
       details: "Bomba, Picos - PI",
-      href: "http://googleusercontent.com/maps.google.com/4"
+      href: "https://maps.app.goo.gl/XzM8tzEid8q8xfkg9"
     },
     {
       icon: <Phone className="w-6 h-6" />,
@@ -216,7 +216,7 @@ const Contato = () => {
             <Card className="card-catalog overflow-hidden shadow-lg">
               <div className="aspect-video w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQkFGOLvE4Wvuo8gYjiTc_vXOuWvIlpJ4&q=Av.+Deputado+Raimundo+de+Sá+Urtiga,+Bomba,+Picos-PI"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQkFGOLvE4Wvuo8gYjiTc_vXOuWvIlpJ4&q=Av. Dep. de - Av. Dep. Sá Urtiga - São José, Picos - PI, 64601-385"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -229,7 +229,7 @@ const Contato = () => {
             {/* 2. BOTÃO ADICIONADO AQUI */}
             <div className="text-center mt-8">
               <a 
-                href="http://googleusercontent.com/maps.google.com/7"
+                href="https://maps.app.goo.gl/XzM8tzEid8q8xfkg9"
                 target="_blank"
                 rel="noopener noreferrer"
               >
