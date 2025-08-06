@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { Link } from 'react-router-dom';
 import { 
   MapPin, 
   Phone, 
@@ -11,63 +12,60 @@ import {
   MessageCircle
 } from 'lucide-react';
 
+// Importando a logo para usar no rodapé
+import logoSrc from '@/assets/logo.png'; 
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  // 1. INFORMAÇÕES DE CONTATO ATUALIZADAS E COM LINKS
   const contactInfo = [
     {
       icon: <MapPin className="w-4 h-4" />,
-      text: "Rua das Comunicações, 123 - Centro"
+      text: "Av. Deputado Raimundo de Sá Urtiga, Bomba, Picos-PI",
+      href: "https://www.google.com/maps/search/?api=1&query=Av.+Deputado+Raimundo+de+Sá+Urtiga,+Bomba,+Picos-PI"
     },
     {
       icon: <Phone className="w-4 h-4" />,
-      text: "(11) 99999-9999"
+      text: "(89) 98145-5724",
+      href: "tel:+5589981455724"
     },
     {
       icon: <Mail className="w-4 h-4" />,
-      text: "contato@novacomunicacao.com.br"
+      text: "novvacomunicacaografica@gmail.com",
+      href: "mailto:novvacomunicacaografica@gmail.com"
     },
-    {
-      icon: <Clock className="w-4 h-4" />,
-      text: "Segunda a Sexta: 8h às 18h"
-    }
   ];
 
+  // 2. LISTA DE SERVIÇOS ATUALIZADA E COM LINKS
   const services = [
-    "Impressão Digital",
-    "Design Gráfico", 
-    "Produtos Têxteis",
-    "Brindes Promocionais",
-    "Sinalização",
-    "Adesivação Automotiva"
+    { label: "Impressos Gráficos", href: "/produtos-servicos#impressos-graficos" },
+    { label: "Comunicação Visual", href: "/produtos-servicos#comunicacao-visual" },
+    { label: "Adesivação de Veículos", href: "/produtos-servicos#adesivacao-de-veiculos" },
+    { label: "Materiais Promocionais", href: "/produtos-servicos#materiais-promocionais" },
+    { label: "Sinalização Corporativa", href: "/produtos-servicos#sinalizacao-corporativa" },
   ];
 
+  // 3. LINKS DE REDES SOCIAIS ATUALIZADOS
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, label: "Facebook" },
-    { icon: <Instagram className="w-5 h-5" />, label: "Instagram" },
-    { icon: <Youtube className="w-5 h-5" />, label: "YouTube" }
+    { icon: <Instagram className="w-5 h-5" />, label: "Instagram", href: "https://www.instagram.com/novva.comunicacao/" },
   ];
 
   return (
     <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">N</span>
-              </div>
+            {/* 4. LOGO ATUALIZADA */}
+            <div className="flex items-center space-x-3 mb-6">
+              <img src={logoSrc} alt="Logo Nova Comunicação" className="h-10 w-auto bg-white p-1 rounded-md" />
               <span className="text-xl font-bold">Nova Comunicação</span>
             </div>
             <p className="text-background/80 mb-6 leading-relaxed">
               Especialistas em comunicação visual. Transformamos suas ideias 
               em realidade com qualidade e criatividade.
             </p>
-            <Button className="btn-hero">
-              <MessageCircle className="w-4 h-4 mr-2" />
-              Pedir Orçamento
-            </Button>
           </div>
 
           {/* Contact Info */}
@@ -75,14 +73,20 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Contato</h3>
             <div className="space-y-4">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start space-x-3">
+                <a 
+                  key={index} 
+                  href={info.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start space-x-3 group"
+                >
                   <div className="text-primary mt-0.5">
                     {info.icon}
                   </div>
-                  <span className="text-background/80 text-sm">
+                  <span className="text-background/80 text-sm group-hover:text-primary transition-colors">
                     {info.text}
                   </span>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -92,9 +96,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Serviços</h3>
             <div className="space-y-3">
               {services.map((service, index) => (
-                <div key={index} className="text-background/80 text-sm hover:text-primary transition-colors duration-300 cursor-pointer">
-                  {service}
-                </div>
+                <Link 
+                  key={index} 
+                  to={service.href} 
+                  className="block text-background/80 text-sm hover:text-primary transition-colors"
+                >
+                  {service.label}
+                </Link>
               ))}
             </div>
           </div>
@@ -107,13 +115,16 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <button
+                <a
                   key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
                   aria-label={social.label}
                 >
                   {social.icon}
-                </button>
+                </a>
               ))}
             </div>
           </div>

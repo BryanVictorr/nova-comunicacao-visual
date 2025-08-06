@@ -129,7 +129,16 @@
 @layer components {
   /* Hero button variant */
   .btn-hero {
-    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-0;
+  }
+
+  /* Estilo do botão no topo (SEM BORDAS e com gradiente invertido) */
+  .btn-hero-outline {
+    @apply bg-gradient-to-r from-secondary to-primary text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-0;
+  }
+    
+  .btn-hero-outline:hover {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground border-primary;
   }
   
   /* Catalog card variant */

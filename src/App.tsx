@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import QuemSomos from "./pages/QuemSomos";
 import ProdutosServicos from "./pages/ProdutosServicos";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
@@ -24,7 +23,6 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/quem-somos" element={<QuemSomos />} />
               <Route path="/produtos-servicos" element={<ProdutosServicos />} />
               <Route path="/contato" element={<Contato />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -24,30 +24,35 @@ const Contato = () => {
     message: ''
   });
 
+  // Informações de contato atualizadas e com links
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Endereço",
-      info: "Rua das Comunicações, 123",
-      details: "Centro - Cidade/UF - CEP 12345-678"
+      info: "Av. Dep. Raimundo de Sá Urtiga",
+      details: "Bomba, Picos - PI",
+      href: "http://googleusercontent.com/maps.google.com/4"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Telefone",
-      info: "(11) 99999-9999",
-      details: "WhatsApp disponível"
+      info: "(89) 98145-5724",
+      details: "WhatsApp disponível",
+      href: "https://wa.me/5589981455724"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "E-mail",
-      info: "contato@novacomunicacao.com.br",
-      details: "Resposta em até 2 horas"
+      info: "novvacomunicacaografica@gmail.com",
+      details: "Resposta em até 2 horas",
+      href: "mailto:novvacomunicacaografica@gmail.com"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Horário",
       info: "Segunda a Sexta: 8h às 18h",
-      details: "Sábado: 8h às 12h"
+      details: "Sábado: 8h às 12h",
+      href: "#"
     }
   ];
 
@@ -62,15 +67,11 @@ const Contato = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você implementaria o envio do formulário
     console.log('Form submitted:', formData);
     alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
   };
@@ -98,18 +99,26 @@ const Contato = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {contactInfo.map((contact, index) => (
-              <Card key={index} className="card-catalog group text-center animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
-                <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300">
-                    {contact.icon}
-                  </div>
-                  <CardTitle className="text-lg">{contact.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold text-foreground mb-1">{contact.info}</p>
-                  <CardDescription>{contact.details}</CardDescription>
-                </CardContent>
-              </Card>
+              <a 
+                href={contact.href} 
+                key={index}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`h-full ${contact.href === '#' ? 'pointer-events-none' : ''}`}
+              >
+                <Card className="card-catalog group text-center h-full animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300">
+                      {contact.icon}
+                    </div>
+                    <CardTitle className="text-lg">{contact.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="font-semibold text-foreground mb-1">{contact.info}</p>
+                    <CardDescription>{contact.details}</CardDescription>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
         </div>
@@ -128,68 +137,25 @@ const Contato = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="name">Nome *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          className="mt-1"
-                          placeholder="Seu nome completo"
-                        />
+                        <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className="mt-1" placeholder="Seu nome completo" />
                       </div>
                       <div>
                         <Label htmlFor="phone">Telefone</Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          className="mt-1"
-                          placeholder="(11) 99999-9999"
-                        />
+                        <Input id="phone" name="phone" value={formData.phone} onChange={handleInputChange} className="mt-1" placeholder="(89) 99999-9999" />
                       </div>
                     </div>
-                    
                     <div>
                       <Label htmlFor="email">E-mail *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="mt-1"
-                        placeholder="seu@email.com"
-                      />
+                      <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className="mt-1" placeholder="seu@email.com" />
                     </div>
-                    
                     <div>
                       <Label htmlFor="subject">Assunto</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        className="mt-1"
-                        placeholder="Como podemos ajudar?"
-                      />
+                      <Input id="subject" name="subject" value={formData.subject} onChange={handleInputChange} className="mt-1" placeholder="Como podemos ajudar?" />
                     </div>
-                    
                     <div>
                       <Label htmlFor="message">Mensagem *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        className="mt-1 min-h-[120px]"
-                        placeholder="Descreva seu projeto ou necessidade..."
-                      />
+                      <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required className="mt-1 min-h-[120px]" placeholder="Descreva seu projeto ou necessidade..." />
                     </div>
-                    
                     <Button type="submit" className="btn-hero w-full text-lg">
                       <Send className="w-5 h-5 mr-2" />
                       Enviar Mensagem
@@ -202,7 +168,6 @@ const Contato = () => {
             {/* Additional Info */}
             <div>
               <h2 className="text-3xl font-bold mb-6 text-gradient">Por que nos escolher?</h2>
-              
               <Card className="card-catalog mb-8">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -217,29 +182,25 @@ const Contato = () => {
                   </CardDescription>
                 </CardContent>
               </Card>
-
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold mb-4">O que oferecemos:</h3>
                 {services.map((service, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center space-x-3 animate-fade-in-up"
-                    style={{animationDelay: `${index * 0.1}s`}}
-                  >
+                  <div key={index} className="flex items-center space-x-3 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                     <span className="text-muted-foreground">{service}</span>
                   </div>
                 ))}
               </div>
-
               <Card className="card-catalog mt-8 bg-gradient-to-r from-primary to-secondary text-white">
                 <CardContent className="p-6 text-center">
                   <h3 className="text-xl font-bold mb-2">Precisa de urgência?</h3>
                   <p className="mb-4 opacity-90">Fale conosco pelo WhatsApp</p>
-                  <Button variant="secondary" className="w-full">
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Chamar no WhatsApp
-                  </Button>
+                  <a href="https://wa.me/5589981455724" target="_blank" rel="noopener noreferrer">
+                    <Button variant="secondary" className="w-full">
+                      <MessageCircle className="w-5 h-5 mr-2" />
+                      Chamar no WhatsApp
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             </div>
@@ -250,19 +211,35 @@ const Contato = () => {
       {/* Map Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gradient">Nossa Localização</h2>
-          <Card className="card-catalog overflow-hidden">
-            <div className="h-96 bg-muted/50 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Venha nos visitar!</h3>
-                <p className="text-muted-foreground">
-                  Rua das Comunicações, 123<br/>
-                  Centro - Cidade/UF
-                </p>
+          <div className="max-w-4xl mx-auto"> {/* 1. Div para limitar a largura e centralizar */}
+            <h2 className="text-3xl font-bold text-center mb-8 text-gradient">Nossa Localização</h2>
+            <Card className="card-catalog overflow-hidden shadow-lg">
+              <div className="aspect-video w-full">
+                <iframe
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQkFGOLvE4Wvuo8gYjiTc_vXOuWvIlpJ4&q=Av.+Deputado+Raimundo+de+Sá+Urtiga,+Bomba,+Picos-PI"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
+            </Card>
+            {/* 2. BOTÃO ADICIONADO AQUI */}
+            <div className="text-center mt-8">
+              <a 
+                href="http://googleusercontent.com/maps.google.com/7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="btn-hero text-lg px-8">
+                  <MapPin className="w-5 h-5 mr-2" />
+                  Abrir no Maps
+                </Button>
+              </a>
             </div>
-          </Card>
+          </div>
         </div>
       </section>
     </div>
