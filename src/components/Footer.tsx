@@ -27,8 +27,8 @@ const Footer = () => {
     },
     {
       icon: <Phone className="w-4 h-4" />,
-      text: "(89) 98145-5724",
-      href: "tel:+5589981455724"
+      text: "(89) 98144-0908",
+      href: "tel:+5589981440908"
     },
     {
       icon: <Mail className="w-4 h-4" />,
@@ -59,8 +59,8 @@ const Footer = () => {
           <div>
             {/* 4. LOGO ATUALIZADA */}
             <div className="flex items-center space-x-3 mb-6">
-              <img src={logoSrc} alt="Logo Nova Comunicação" className="h-10 w-auto bg-white p-1 rounded-md" />
-              <span className="text-xl font-bold">Nova Comunicação</span>
+              <img src={logoSrc} alt="Logo Novva Comunicação" className="h-10 w-auto bg-white p-1 rounded-md" />
+              <span className="text-xl font-bold">Novva Comunicação</span>
             </div>
             <p className="text-background/80 mb-6 leading-relaxed">
               Especialistas em comunicação visual. Transformamos suas ideias 
@@ -135,7 +135,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-background/60">
           <p>
-            © {currentYear} Nova Comunicação. Todos os direitos reservados.
+            © {currentYear} Novva Comunicação. Todos os direitos reservados.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-primary transition-colors duration-300">

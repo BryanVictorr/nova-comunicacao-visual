@@ -11,12 +11,12 @@ const AboutSection = () => {
           {/* Coluna de Texto */}
           <div className="text-left animate-fade-in-up">
             <h2 className="text-4xl font-bold mb-6 text-gradient">
-              Conheça a Nova Comunicação
+              Conheça a Novva Comunicação
             </h2>
             <div className="space-y-4 text-lg text-muted-foreground">
               <p>
                 {/* COLOQUE AQUI O TEXTO SOBRE SUA EMPRESA */}
-                Fundada com a paixão por transformar ideias em realidade, a Nova Comunicação é sua parceira estratégica em comunicação visual. 
+                Fundada com a paixão por transformar ideias em realidade, a Novva Comunicação é sua parceira estratégica em comunicação visual. 
                 Com anos de experiência, combinamos criatividade e tecnologia de ponta para entregar resultados que impressionam.
               </p>
               <p>
@@ -33,7 +33,7 @@ const AboutSection = () => {
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <img 
               src={aboutImage} 
-              alt="Escritório da Nova Comunicação"
+              alt="Escritório da Novva Comunicação"
               className="rounded-xl shadow-lg w-full h-auto object-cover aspect-[4/3]"
             />
           </div>
