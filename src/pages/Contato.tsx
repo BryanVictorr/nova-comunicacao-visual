@@ -46,7 +46,7 @@ const Contato = () => {
     {
       icon: <MessageCircle className="w-6 h-6" />,
       title: "WhatsApp",
-      info: "(89) 98145-5724",
+      info: "Atendimento Rápido",
       details: "Clique para iniciar a conversa",
       href: "https://wa.me/5589981455724"
     },
@@ -60,9 +60,9 @@ const Contato = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Telefone",
-      info: "(89) 98145-5724",
+      info: "(89) 98144-0809",
       details: "Ligação direta",
-      href: "tel:+5589981455724"
+      href: "tel:+5589981440809"
     },
     {
       icon: <Mail className="w-6 h-6" />,

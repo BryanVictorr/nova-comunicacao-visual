@@ -11,7 +11,7 @@ const AboutSection = () => {
           {/* Coluna de Texto */}
           <div className="text-left animate-fade-in-up">
             <h2 className="text-4xl font-bold mb-6 text-gradient">
-              Conheça a Novva Comunicação
+              Conheça a Novva Comunicação Visual
             </h2>
             <div className="space-y-4 text-lg text-muted-foreground">
               <p>
