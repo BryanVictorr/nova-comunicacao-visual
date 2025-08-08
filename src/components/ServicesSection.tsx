@@ -16,7 +16,6 @@ interface Service {
 }
 
 const servicesList: Service[] = [
-  // ... (a lista de serviços continua a mesma)
   {
     icon: Printer,
     title: 'Impressos Gráficos',

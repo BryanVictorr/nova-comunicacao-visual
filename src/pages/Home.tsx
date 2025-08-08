@@ -26,7 +26,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             
             {/* 1. Botão do WhatsApp (Laranja) */}
-            <a href="https://wa.me/5589981440908?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5589981060809?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer">
               <Button className="btn-hero px-8 py-3 text-lg w-full sm:w-auto">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Falar no WhatsApp
@@ -34,7 +34,7 @@ const Home = () => {
             </a>
 
             {/* 2. Botão de E-mail (Escuro) */}
-            <a href="mailto:novvacomunicacaografica@gmail.com">
+            <a href="mailto:contato@novvacv.com.br">
               <Button variant="secondary" size="lg" className="px-8 py-3 text-lg w-full sm:w-auto">
                 <Mail className="w-5 h-5 mr-2" />
                 Enviar E-mail

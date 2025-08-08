@@ -48,7 +48,7 @@ const Contato = () => {
       title: "WhatsApp",
       info: "Atendimento Rápido",
       details: "Clique para iniciar a conversa",
-      href: "https://wa.me/5589981455724"
+      href: "https://wa.me/5589981060908"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -60,16 +60,16 @@ const Contato = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Telefone",
-      info: "(89) 98144-0809",
+      info: "(89) 98106-0908",
       details: "Ligação direta",
-      href: "tel:+5589981440809"
+      href: "tel:+5589981060908"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "E-mail",
-      info: "novvacomunicacaografica@gmail.com",
+      info: "contato@novvacv.com.br",
       details: "Resposta em até 2 horas",
-      href: "mailto:novvacomunicacaografica@gmail.com"
+      href: "mailto:contato@novvacv.com.br"
     },
   ];
 
@@ -147,7 +147,7 @@ const Contato = () => {
                       </div>
                       <div>
                         <Label htmlFor="phone">Telefone</Label>
-                        <Input id="phone" name="phone" className="mt-1" placeholder="(89) 99999-9999" />
+                        <Input id="phone" name="phone" className="mt-1" placeholder="(XX) 99999-9999" />
                       </div>
                     </div>
                     <div>

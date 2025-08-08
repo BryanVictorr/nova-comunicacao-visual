@@ -27,13 +27,13 @@ const Footer = () => {
     },
     {
       icon: <Phone className="w-4 h-4" />,
-      text: "(89) 98144-0908",
-      href: "tel:+5589981440908"
+      text: "(89) 98106-0908",
+      href: "tel:+5589981060908"
     },
     {
       icon: <Mail className="w-4 h-4" />,
-      text: "novvacomunicacaografica@gmail.com",
-      href: "mailto:novvacomunicacaografica@gmail.com"
+      text: "contato@novvacv.com.br",
+      href: "mailto:contato@novvacv.com.br"
     },
   ];
 

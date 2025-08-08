@@ -4,15 +4,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  Printer, 
-  Presentation, 
-  CarFront, 
-  Gift, 
+import {
+  Printer,
+  Presentation,
+  CarFront,
+  Gift,
   Building2,
   ArrowRight,
   Star,
-  CheckCircle 
+  CheckCircle
 } from 'lucide-react';
 
 // Importando as imagens que você já tem no projeto
@@ -86,9 +86,9 @@ const ProdutosServicosPage = () => {
             {/* Abas com ícones e labels */}
             <TabsList className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 mb-12 h-auto p-1">
               {categories.map((category) => (
-                <TabsTrigger 
-                  key={category.id} 
-                  value={category.id} 
+                <TabsTrigger
+                  key={category.id}
+                  value={category.id}
                   className="flex flex-col gap-2 p-4 data-[state=active]:bg-primary data-[state=active]:text-white"
                 >
                   {category.icon}
@@ -102,29 +102,29 @@ const ProdutosServicosPage = () => {
               <TabsContent key={category.id} value={category.id}>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                   {productsByCategory[category.id as keyof typeof productsByCategory]?.map((product, index) => (
-                    <Card key={index} className="card-catalog group relative overflow-hidden flex flex-col animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                    <Card key={index} className="card-catalog group relative overflow-hidden flex flex-col animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
                       {product.popular && (
                         <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-primary to-secondary text-white">
                           <Star className="w-3 h-3 mr-1" /> Popular
                         </Badge>
                       )}
-                      
+
                       {product.image && (
                         <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-                          <img 
-                            src={product.image} 
+                          <img
+                            src={product.image}
                             alt={product.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
                       )}
-                      
+
                       <CardHeader>
                         <CardTitle>{product.title}</CardTitle>
                         <CardDescription>{product.description}</CardDescription>
                       </CardHeader>
-                      
+
                       <CardContent className="flex flex-col flex-grow justify-between">
                         <div className="space-y-2 mb-6">
                           {product.features.map((feature, fIndex) => (
@@ -134,13 +134,20 @@ const ProdutosServicosPage = () => {
                             </div>
                           ))}
                         </div>
-                        
+
                         <div>
                           <p className="text-2xl font-bold text-gradient mb-4">{product.price}</p>
-                          <Button className="w-full btn-hero">
-                            Solicitar Orçamento
-                          </Button>
+                          <a
+                            href="https://wa.me/5589981060908?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button className="w-full btn-hero">
+                              Solicitar Orçamento
+                            </Button>
+                          </a>
                         </div>
+
                       </CardContent>
                     </Card>
                   ))}

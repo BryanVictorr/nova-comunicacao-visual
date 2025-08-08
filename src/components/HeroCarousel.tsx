@@ -60,9 +60,9 @@ const HeroCarousel = () => {
           <p className="text-lg md:text-xl mb-10 text-gray-200 drop-shadow-md">
             Soluções criativas e personalizadas para destacar sua marca no mundo físico e digital.
           </p>
-
+          
           <div className="flex flex-col sm:flex-row gap-4 mb-12 items-center sm:items-start">
-            <a href="https://wa.me/5589981440809?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5589981060908?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer">
               <Button className="btn-hero text-lg px-8 h-14">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Pedir Orçamento
